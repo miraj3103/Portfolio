@@ -25,6 +25,13 @@
 
         <!-- Projects Grid -->
         <div class="relative mt-10 min-h-[22rem]">
+
+            <!-- যদি 'Creative Graphics Design' ট্যাব সিলেক্ট থাকে, কোলাজ দেখান -->
+            <template x-if="activeCategory === 'Creative Graphics Design'">
+                <div class="px-1">
+                    @include('components.graphics-collage')
+                </div>
+            </template>
             <!-- outgoing (fade/scale out) -->
             <div x-show="isAnimatingOut" x-transition:leave="transition ease-in duration-200"
                 x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
@@ -72,11 +79,11 @@
                             </template>
 
                             <!-- CTA row: See Demo (all devices) + optional Case Study link on desktop -->
-                            <div class="mt-4 flex items-center justify-between gap-3">
+                            <div class="mt-4 flex items-center justify-end gap-3">
 
 
                                 <!-- চাইলে ডেস্কটপে কেস স্টাডি হিন্ট রাখুন; না লাগলে এই <a> মুছে দিন -->
-                                <a :href="'#' + p.slug"
+                                {{-- <a :href="'#' + p.slug"
                                     class="hidden md:inline-flex items-center gap-2 rounded-full border border-gray-300 px-3 py-1.5
                     text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-white/10 dark:text-gray-200 dark:hover:bg-white/10">
                                     View case study
@@ -84,7 +91,7 @@
                                         <path
                                             d="M12.293 3.293a1 1 0 011.414 0l4.999 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L15.586 11H6a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" />
                                     </svg>
-                                </a>
+                                </a> --}}
 
 
                                 <a :href="p.live_url" target="_blank" rel="noopener"
@@ -136,14 +143,35 @@
                 allProjects: [
                     // Laravel
                     {
-                        title: 'Fintech Onboarding Revamp',
+                        title: 'Accounts',
                         slug: 'fintech-onboarding',
                         thumb: '/images/projects/fintech-cover.jpg',
                         preview: '/images/projects/fintech-preview.jpg',
-                        tags: ['Laravel', 'Tailwind', 'A/B Test'],
+                        tags: ['Tailwind', 'Laravel', 'PHP'],
                         metrics: ['Signup +32%', 'LCP 1.8s'],
                         category: 'Laravel Web App',
-                        live_url: 'https://example.com/fintech'
+                        live_url: 'https://www.primes.com.bd/'
+                    },
+
+                    {
+                        title: 'Primes',
+                        slug: 'ecommerce-speed',
+                        thumb: '/images/projects/ecom-speed.jpg',
+                        preview: '/images/projects/ecom-preview.jpg',
+                        tags: ['Tailwind', 'Laravel', 'PHP', 'SEO'],
+                        metrics: ['+21% CR', 'CLS ~0.02'],
+                        category: 'Laravel Web App',
+                        live_url: 'https://www.primes.com.bd/'
+                    },
+                    {
+                        title: 'Khalid IT',
+                        slug: 'khalid-it',
+                        thumb: '/images/projects/ecom-speed.jpg',
+                        preview: '/images/projects/ecom-preview.jpg',
+                        tags: ['Tailwind', 'Laravel', 'PHP'],
+                        metrics: ['Signup +32%', 'LCP 1.8s'],
+                        category: 'Laravel Web App',
+                        live_url: 'https://khalidit.com/'
                     },
                     {
                         title: 'Custom CRM Portal',
@@ -158,61 +186,219 @@
 
                     // WordPress
                     {
-                        title: 'Corporate WP Site (Divi)',
+                        title: 'Nagar Bazar',
                         slug: 'wp-corporate',
                         thumb: '/images/projects/wp-corp.jpg',
                         preview: '/images/projects/wp-corp-preview.jpg',
-                        tags: ['WordPress', 'Divi', 'SEO'],
+                        tags: ['E-commerce', 'Astra', 'Elementor', 'SEO'],
                         metrics: ['CLS 0.02', 'LCP 2.1s'],
                         category: 'WordPress Website',
-                        live_url: 'https://example.com/wp-corp'
+                        live_url: 'https://nagarbazar.com/'
+                    },
+                    {
+                        title: 'Bari Bose Kini',
+                        slug: 'wp-corporate-admin',
+                        thumb: '/images/projects/wp-corp-admin.jpg',
+                        preview: '/images/projects/wp-corp-admin-preview.jpg',
+                        tags: ['E-commerce', 'Woodmart', 'Elementor', 'SEO'],
+                        metrics: ['CLS 0.02', 'LCP 2.1s'],
+                        category: 'WordPress Website',
+                        live_url: 'https://baribosekini.com/'
                     },
 
-                    // E-commerce
                     {
-                        title: 'E-commerce Speed Upgrade',
+                        title: 'Shokher Karu Kaj',
+                        slug: 'shokher-karu-kaj',
+                        thumb: '/images/projects/ecom-speed.jpg',
+                        preview: '/images/projects/ecom-preview.jpg',
+                        tags: ['E-commerce', 'Woodmart', 'Elementor', 'SEO'],
+                        metrics: ['+21% CR', 'CLS ~0.02'],
+                        category: 'WordPress Website',
+                        live_url: 'https://www.shokherkarukaj.com/'
+                    },
+
+                    {
+                        title: 'Prime Computers',
+                        slug: 'primescomputers',
+                        thumb: '/images/projects/ecom-speed.jpg',
+                        preview: '/images/projects/ecom-preview.jpg',
+                        tags: ['E-commerce', 'Woodmart', 'Elementor', 'SEO'],
+                        metrics: ['+21% CR', 'CLS ~0.02'],
+                        category: 'WordPress Website',
+                        live_url: 'https://old.primecomputer.com.bd/'
+                    },
+                    {
+                        title: 'Optivise Media',
+                        slug: 'optivise-media',
+                        thumb: '/images/projects/ecom-speed.jpg',
+                        preview: '/images/projects/ecom-preview.jpg',
+                        tags: ['WordPress', 'Divi', 'SEO'],
+                        metrics: ['+21% CR', 'CLS ~0.02'],
+                        category: 'WordPress Website',
+                        live_url: 'https://optivisemedia.com/'
+                    },
+                    {
+                        title: 'Brand Leadx',
+                        slug: 'brand-leadx',
+                        thumb: '/images/projects/ecom-speed.jpg',
+                        preview: '/images/projects/ecom-preview.jpg',
+                        tags: ['WordPress', 'Divi', 'SEO'],
+                        metrics: ['+21% CR', 'CLS ~0.02'],
+                        category: 'WordPress Website',
+                        live_url: 'https://brandleadx.com/'
+                    },
+
+                    // E-commerce category******************************************************************************************
+                    {
+                        title: 'Primes',
                         slug: 'ecommerce-speed',
                         thumb: '/images/projects/ecom-speed.jpg',
                         preview: '/images/projects/ecom-preview.jpg',
-                        tags: ['Caching', 'Image CDN', 'SEO'],
+                        tags: ['Tailwind', 'Laravel', 'PHP', 'SEO'],
                         metrics: ['+21% CR', 'CLS ~0.02'],
                         category: 'E-commerce',
-                        live_url: 'https://example.com/shop'
+                        live_url: 'https://www.primes.com.bd/'
+                    },
+                    {
+                        title: 'Nagar Bazar',
+                        slug: 'wp-corporate',
+                        thumb: '/images/projects/wp-corp.jpg',
+                        preview: '/images/projects/wp-corp-preview.jpg',
+                        tags: ['E-commerce', 'Astra', 'Elementor', 'SEO'],
+                        metrics: ['CLS 0.02', 'LCP 2.1s'],
+                        category: 'E-commerce',
+                        live_url: 'https://nagarbazar.com/'
+                    },
+                    {
+                        title: 'Bari Bose Kini',
+                        slug: 'wp-corporate-admin',
+                        thumb: '/images/projects/wp-corp-admin.jpg',
+                        preview: '/images/projects/wp-corp-admin-preview.jpg',
+                        tags: ['E-commerce', 'Woodmart', 'Elementor', 'SEO'],
+                        metrics: ['CLS 0.02', 'LCP 2.1s'],
+                        category: 'E-commerce',
+                        live_url: 'https://baribosekini.com/'
                     },
 
-                    // Performance & Audit
                     {
-                        title: 'CWV Performance Sprint',
-                        slug: 'cwv-sprint',
-                        thumb: '/images/projects/perf-cwv.jpg',
-                        preview: '/images/projects/perf-cwv-preview.jpg',
-                        tags: ['LCP', 'CLS', 'CI/CD'],
-                        metrics: ['LCP 1.6s', 'FID < 20ms'],
+                        title: 'Shokher Karu Kaj',
+                        slug: 'shokher-karu-kaj',
+                        thumb: '/images/projects/ecom-speed.jpg',
+                        preview: '/images/projects/ecom-preview.jpg',
+                        tags: ['E-commerce', 'Woodmart', 'Elementor', 'SEO'],
+                        metrics: ['+21% CR', 'CLS ~0.02'],
+                        category: 'E-commerce',
+                        live_url: 'https://www.shokherkarukaj.com/'
+                    },
+
+                    {
+                        title: 'Prime Computers',
+                        slug: 'primescomputers',
+                        thumb: '/images/projects/ecom-speed.jpg',
+                        preview: '/images/projects/ecom-preview.jpg',
+                        tags: ['E-commerce', 'Woodmart', 'Elementor', 'SEO'],
+                        metrics: ['+21% CR', 'CLS ~0.02'],
+                        category: 'E-commerce',
+                        live_url: 'https://old.primecomputer.com.bd/'
+                    },
+
+
+                    // Performance & Audit*********************************************************************************************************
+                    {
+                        title: 'Primes',
+                        slug: 'ecommerce-speed',
+                        thumb: '/images/projects/ecom-speed.jpg',
+                        preview: '/images/projects/ecom-preview.jpg',
+                        tags: ['Tailwind', 'Laravel', 'PHP', 'SEO'],
+                        metrics: ['+21% CR', 'CLS ~0.02'],
                         category: 'Performance & Audit',
-                        live_url: 'https://example.com/cwv'
+                        live_url: 'https://www.primes.com.bd/'
+                    },
+                    {
+                        title: 'Nagar Bazar',
+                        slug: 'wp-corporate',
+                        thumb: '/images/projects/wp-corp.jpg',
+                        preview: '/images/projects/wp-corp-preview.jpg',
+                        tags: ['E-commerce', 'Astra', 'Elementor', 'SEO'],
+                        metrics: ['CLS 0.02', 'LCP 2.1s'],
+                        category: 'Performance & Audit',
+                        live_url: 'https://nagarbazar.com/'
+                    },
+                    {
+                        title: 'Bari Bose Kini',
+                        slug: 'wp-corporate-admin',
+                        thumb: '/images/projects/wp-corp-admin.jpg',
+                        preview: '/images/projects/wp-corp-admin-preview.jpg',
+                        tags: ['E-commerce', 'Woodmart', 'Elementor', 'SEO'],
+                        metrics: ['CLS 0.02', 'LCP 2.1s'],
+                        category: 'Performance & Audit',
+                        live_url: 'https://baribosekini.com/'
+                    },
+
+                    {
+                        title: 'Shokher Karu Kaj',
+                        slug: 'shokher-karu-kaj',
+                        thumb: '/images/projects/ecom-speed.jpg',
+                        preview: '/images/projects/ecom-preview.jpg',
+                        tags: ['E-commerce', 'Woodmart', 'Elementor', 'SEO'],
+                        metrics: ['+21% CR', 'CLS ~0.02'],
+                        category: 'Performance & Audit',
+                        live_url: 'https://www.shokherkarukaj.com/'
+                    },
+
+                    {
+                        title: 'Prime Computers',
+                        slug: 'primescomputers',
+                        thumb: '/images/projects/ecom-speed.jpg',
+                        preview: '/images/projects/ecom-preview.jpg',
+                        tags: ['E-commerce', 'Woodmart', 'Elementor', 'SEO'],
+                        metrics: ['+21% CR', 'CLS ~0.02'],
+                        category: 'Performance & Audit',
+                        live_url: 'https://old.primecomputer.com.bd/'
                     },
 
                     // UI/UX & Landing
                     {
-                        title: 'High-Converting Landing',
-                        slug: 'hc-landing',
+                        title: 'Shakil Sir',
+                        slug: 'shakil-sir',
                         thumb: '/images/projects/landing.jpg',
                         preview: '/images/projects/landing-preview.jpg',
-                        tags: ['UI/UX', 'A/B', 'Heatmap'],
+                        tags: ['WordPress', 'A/B', 'Divi'],
                         metrics: ['+27% CVR', 'Bounce −18%'],
                         category: 'UI/UX & Landing',
-                        live_url: 'https://example.com/landing'
+                        live_url: 'https://shakilsir.com/'
+                    },
+                    {
+                        title: 'Cheap Air Tickets',
+                        slug: 'cheap-air-tickets',
+                        thumb: '/images/projects/landing.jpg',
+                        preview: '/images/projects/landing-preview.jpg',
+                        tags: ['WordPress', 'Divi', 'SEO'],
+                        metrics: ['+27% CVR', 'Bounce −18%'],
+                        category: 'UI/UX & Landing',
+                        live_url: 'https://cheapairtickets.us/'
+                    },
+                    {
+                        title: 'Cheap Flight Booking',
+                        slug: 'cheap-flight-booking',
+                        thumb: '/images/projects/landing.jpg',
+                        preview: '/images/projects/landing-preview.jpg',
+                        tags: ['WordPress', 'Divi', 'SEO'],
+                        metrics: ['+27% CVR', 'Bounce −18%'],
+                        category: 'UI/UX & Landing',
+                        live_url: 'https://cheapflightbook.us/'
                     },
                     // Creative Graphics Design
+
                     {
-                        title: 'Brand Identity & Graphics',
-                        slug: 'brand-identity',
-                        thumb: '/images/projects/graphics.jpg',
+                        title: 'Graphics Design',
+                        slug: 'creative-graphics-design',
+                        thumb: '/images/carusol/1.png',
                         preview: '/images/projects/graphics-preview.jpg',
-                        tags: ['Logo', 'Branding', 'Social', 'Banner'],
-                        metrics: ['+50% Engagement', 'Brand Recall +40%'],
+                        tags: ['Branding', 'Social Media', 'Print'],
+                        metrics: ['Engagement +50%', 'Reach +30%'],
                         category: 'Creative Graphics Design',
-                        live_url: 'https://example.com/graphics'
+                        live_url: '#'
                     },
 
                     // Hosting/DevOps

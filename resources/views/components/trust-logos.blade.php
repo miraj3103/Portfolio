@@ -14,12 +14,11 @@
                     <ul class="marquee__group">
                         @php
                             $logos = [
-                                ['src' => '/images/logos/brand-1.svg', 'alt' => 'Acme Inc'],
-                                ['src' => '/images/logos/brand-2.svg', 'alt' => 'NovaCare'],
-                                ['src' => '/images/logos/brand-3.svg', 'alt' => 'Vertex'],
-                                ['src' => '/images/logos/brand-4.svg', 'alt' => 'OrbitX'],
-                                ['src' => '/images/logos/brand-5.svg', 'alt' => 'BlueLeaf'],
-                                ['src' => '/images/logos/brand-6.svg', 'alt' => 'Kite Labs'],
+                                ['src' => '/images/trust/primes.png', 'alt' => 'Primes'],
+                                ['src' => '/images/trust/bk-fashion.png', 'alt' => 'BK Fashion'],
+                                ['src' => '/images/trust/ladies-touch.png', 'alt' => 'Ladies Touch'],
+                                ['src' => '/images/trust/jazzmon.png', 'alt' => 'Jazzmon'],
+
                             ];
                         @endphp
                         @foreach ($logos as $logo)
