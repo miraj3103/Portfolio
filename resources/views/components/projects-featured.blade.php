@@ -156,7 +156,7 @@
                     {
                         title: 'Primes',
                         slug: 'ecommerce-speed',
-                        thumb: '/images/projects/ecom-speed.jpg',
+                        thumb: '/images/projects/primes-ss.png',
                         preview: '/images/projects/ecom-preview.jpg',
                         tags: ['Tailwind', 'Laravel', 'PHP', 'SEO'],
                         metrics: ['+21% CR', 'CLS ~0.02'],

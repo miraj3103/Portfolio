@@ -14,7 +14,7 @@
                 [
                     'name' => 'Sarah Chen',
                     'role' => 'CMO, NovaCare',
-                    'avatar' => '/images/testimonials/1.jpg',
+                    'avatar' => '/images/testimonials/woman.png',
                     'quote' => 'On time, pixel-perfect, and measurable impact. Our trial signups jumped significantly.',
                     'project' => 'Fintech Onboarding Revamp',
                     'rating' => 5,
@@ -22,7 +22,7 @@
                 [
                     'name' => 'Jamal Rahman',
                     'role' => 'Founder, ShopLite',
-                    'avatar' => '/images/testimonials/2.jpg',
+                    'avatar' => '/images/testimonials/man.png',
                     'quote' => 'Speed upgrade was phenomenal. LCP dropped under 2s and conversions went up.',
                     'project' => 'E-commerce Speed Upgrade',
                     'rating' => 5,
@@ -30,7 +30,7 @@
                 [
                     'name' => 'Elena Marin',
                     'role' => 'Head of Growth, SkyBean',
-                    'avatar' => '/images/testimonials/3.jpg',
+                    'avatar' => '/images/testimonials/woman.png',
                     'quote' => 'Clean build, great comms, and thoughtful UX decisions. Highly recommended.',
                     'project' => 'SaaS Marketing Site',
                     'rating' => 5,
@@ -38,7 +38,7 @@
                 [
                     'name' => 'Raj Patel',
                     'role' => 'CTO, HealthSync',
-                    'avatar' => '/images/testimonials/4.jpg',
+                    'avatar' => '/images/testimonials/man.png',
                     'quote' => 'Delivered on time with excellent quality. Our app performance improved significantly.',
                     'project' => 'Healthcare App Redesign',
                     'rating' => 4.8,
@@ -46,7 +46,7 @@
                 [
                     'name' => 'Maya Lopez',
                     'role' => 'Product Manager, EduTech',
-                    'avatar' => '/images/testimonials/5.jpg',
+                    'avatar' => '/images/testimonials/woman.png',
                     'quote' => 'Fantastic attention to detail and user experience. Our users love the new design.',
                     'project' => 'Learning Platform UI Refresh',
                     'rating' => 5,
@@ -54,7 +54,7 @@
                 [
                     'name' => 'Liam Johnson',
                     'role' => 'CEO, TechNova',
-                    'avatar' => '/images/testimonials/6.jpg',
+                    'avatar' => '/images/testimonials/man.png',
                     'quote' => 'Exceptional service and support throughout the project. Highly recommend!',
                     'project' => 'TechNova Website Redesign',
                     'rating' => 5,
